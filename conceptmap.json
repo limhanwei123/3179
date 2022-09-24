@@ -40,23 +40,23 @@
             "fields": ["total_medal"]
           }
         },
-        {"calculate": "datum.total_medal", "as": "Total Medal Scale"}
+        {"calculate": "datum.total_medal", "as": "Total Medal Score Scale"}
       ],
       "mark": {"type": "geoshape", "stroke": "lightslategray"},
       "encoding": {
         "color": {
-          "field": "Total Medal Scale",
+          "field": "Total Medal Score Scale",
           "type": "quantitative",
           "scale": {
             "type": "threshold",
             "domain": [0, 2, 4, 6, 8],
             "range": [
-              "#fdbe85",
-              "#fd8d3c",
-              "#e6550d",
-              "#a63603",
-              "#792600",
-              "#591C01"
+              "#b7ffbf",
+              "#95f985",
+              "#4ded30",
+              "#26d701",
+              "#00c301",
+              "#00ab08"
             ]
           },
           "legend": {
@@ -71,7 +71,7 @@
             "field": "Total Medal Scale",
             "type": "quantitative",
             "format": ".2f",
-            "title": "Total Medal Scale"
+            "title": "Total Medal Score"
           }
         ]
       }
