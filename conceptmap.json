@@ -71,7 +71,7 @@
             "field": "Total Medal Score Scale",
             "type": "quantitative",
             "format": ".2f",
-            "title": "Total Medal Score Scale"
+            "title": "Total Medal Score"
           }
         ]
       }
