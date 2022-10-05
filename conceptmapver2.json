@@ -46,6 +46,7 @@
       "encoding": {
         "color": {
           "field": "total_suicide",
+          "title": "Total Suicide",
           "type": "quantitative",
           "scale": {
             "type": "threshold",
@@ -71,7 +72,7 @@
             "field": "total_suicide",
             "type": "quantitative",
             "format": ".2f",
-            "title": "total_suicide"
+            "title": "Total Suicide"
           }
         ]
       }
