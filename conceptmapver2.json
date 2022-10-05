@@ -52,7 +52,7 @@
             "type": "threshold",
             "domain": [0, 10, 20, 30, 40],
             "range": [
-              "#f7d7dc",
+              "#f7d7dc", 
               "#f6bdc0",
               "#f1959b",
               "#f07470",
