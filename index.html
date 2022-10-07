@@ -14,9 +14,14 @@
 <body>
   
 <div id="choropleth_map"></div>
+<div id="bar_chart"></div>
 
 <script type="text/javascript">
-
+  var spec1 = "conceptmapver1.json";
+  vegaEmbed('#bar_chart', spec1).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
   var spec2 = "conceptmapver2.json";
   vegaEmbed('#choropleth_map', spec2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
