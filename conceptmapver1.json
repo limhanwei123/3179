@@ -36,8 +36,10 @@
           "type": "nominal",
           "scale": {
             "domain": ["North America", "South America", "Europe", "Asia"],
-            "range": ["#e41a1c", "#984ea3", "#ff7f00", "#377eb8"]
-          }
+            "range": ["#e41a1c", "#984ea3", "#ff7f00", "#377eb8"],
+          },
+          "title": "Continent",
+          "legend": {"labelFontSize": 14}
         },
         "opacity": {
           "condition": {"param": "continent_highlight", "value": 0.6},
