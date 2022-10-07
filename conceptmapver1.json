@@ -13,7 +13,7 @@
     }
   ],
   "encoding": {
-    "x": {"field": "country", "type": "nominal", "title": "Country"},
+    "x": {"field": "country", "type": "nominal", "title": "Country","axis": {"labelAngle": -45}},
     "y": {
       "field": "total_suicide",
       "type": "quantitative",
@@ -60,13 +60,6 @@
       }
     },
     {
-      "params": [
-        {
-          "name": "continentchoice",
-          "select": {"type": "point", "fields": ["continent"]},
-          "bind": "legend"
-        }
-      ],
       "mark": {
         "type": "text",
         "align": "right",
@@ -77,12 +70,17 @@
         "dy": -10,
         "fontWeight": "bold"
       },
+      "transform": [
+        {"filter": {"param": "continent_highlight"}},
+        {"calculate": "datum['country'] + ';' + datum['total_suicide']", "as": "textresraw"},
+        {"calculate": "split(datum.textresraw,';')", "as": "textres"}
+      ],
       "encoding": {
-        "text": {"field": "total_suicide", "type": "quantitative"},
+        "text": {"field": "textres"},
         "color": {"value": "red"},
         "opacity": {
           "condition": {
-            "test": "continentchoice!='Europe' && datum.country=='Russia'",
+            "test": "datum.country=='Russia'",
             "value": 1
           },
           "value": 0
