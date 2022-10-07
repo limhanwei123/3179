@@ -34,7 +34,7 @@
           "lookup": "properties.NAME",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/limhanwei123/3179/main/suicide/suiciderate.csv"
+              "url": "https://raw.githubusercontent.com/limhanwei123/3179/main/suicide/suicideclean.csv"
             },
             "key": "country",
             "fields": ["suiciderate"]
