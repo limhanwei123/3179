@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 500,
+  "data": {
+    "url": "https://raw.githubusercontent.com/limhanwei123/3179/main/suicide/who_data_clean.csv"
+  },
+  "params": [
+    {
+      "name": "continent_highlight",
+      "select": {"type": "point", "fields": ["continent"]},
+      "bind": "legend"
+    }
+  ],
+  "mark": "area",
+  "encoding": {
+    "x": {
+      "timeUnit": "yearmonth",
+      "field": "year",
+      "title": "Year",
+      "axis": {"domain": false, "format": "%Y", "tickSize": 0}
+    },
+    "y": {"aggregate": "mean", "field": "rate", "axis": null},
+    "color": {
+      "field": "continent",
+      "scale": {
+        "domain": [
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "range": [
+          "#e41a1c",
+          "#984ea3",
+          "#ff7f00",
+          "#a6cee3",
+          "#377eb8",
+          "#a65628"
+        ]
+      }
+    },
+    "opacity": {
+      "condition": {"param": "continent_highlight", "value": 0.6},
+      "value": 0.2
+    },
+    "tooltip": [
+      {"field": "continent"},
+      {"field": "rate", "aggregate": "average", "format": ".2f"},
+      {"timeUnit": "year", "field": "year", "title": "Year"}
+    ]
+  }
+}
