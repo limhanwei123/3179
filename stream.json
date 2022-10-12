@@ -23,6 +23,7 @@
     "y": {"aggregate": "mean", "field": "rate", "axis": null},
     "color": {
       "field": "continent",
+      "title": "Continent",
       "scale": {
         "domain": [
           "North America",
@@ -47,8 +48,8 @@
       "value": 0.2
     },
     "tooltip": [
-      {"field": "continent"},
-      {"field": "rate", "aggregate": "average", "format": ".2f"},
+      {"field": "continent", "title": "Continent"},
+      {"field": "rate", "aggregate": "average", "format": ".2f", "title": "Suicide Rate"},
       {"timeUnit": "year", "field": "year", "title": "Year"}
     ]
   }
