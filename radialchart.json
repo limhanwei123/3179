@@ -52,5 +52,6 @@
       {"field": "continent", "title": "Continent"},
       {"field": "mean_acc", "title": "Suicide Rate", "format": ".2f"}
     ]
-  }
+  },
+  "config": {"view": {"stroke": null}, "axis": {"grid": false}}
 }
