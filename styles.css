@@ -48,3 +48,27 @@ h1 {
 .small-font {
     font-size: 14px;
 }
+
+.column {
+    float: left;
+    }
+
+    /* Set width length for the left, right and middle columns */
+.left {
+    width: 25%;
+}
+
+.middle {
+    width: 50%;
+    height: 100%;
+}
+    
+.right {
+    width: 25%;
+}
+    
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
