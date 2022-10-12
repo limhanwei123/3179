@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Top 10 Country In Total Number of Suicide",
-  "width": 600,
-  "height": 600,
+  "width": 400,
+  "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/limhanwei123/3179/main/suicide/who_data_clean.csv"
   },
