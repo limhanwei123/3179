@@ -48,6 +48,24 @@
       "condition": {"param": "continent_highlight", "value": 1},
       "value": 0.2
     },
+    "scale": {
+        "domain": [
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "range": [
+          "#e41a1c",
+          "#984ea3",
+          "#ff7f00",
+          "#a6cee3",
+          "#377eb8",
+          "#a65628"
+        ]
+      },
     "tooltip": [
       {"field": "continent", "title": "Continent"},
       {"field": "mean_acc", "title": "Suicide Rate", "format": ".2f"}
