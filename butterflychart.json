@@ -19,7 +19,7 @@
       "aggregate": "average",
       "field": "signed_people",
       "title": "Number of Suicides",
-      "axis": {"format": "s"},
+      "axis": {"labels": false},
       "scale": {"domain": [-30, 30]}
     },
     "color": {
