@@ -18,7 +18,7 @@
     "x": {
       "aggregate": "average",
       "field": "signed_people",
-      "title": "Number of Suicides",
+      "title": "Suicide Rate",
       "axis": {"labels": false},
       "scale": {"domain": [-30, 30]}
     },
@@ -28,7 +28,7 @@
       "legend": {"orient": "top", "title": "Gender"}
     },
     "tooltip": [
-      {"field": "gender"},
+      {"field": "gender", "title": "Gender"},
       {"field": "continent", "title": "Continent"},
       {
         "aggregate": "average",
