@@ -13,6 +13,7 @@ body {
 .page {
     width: 1200px;
     background-color: white;
+    height: auto;
 }
 
 .my-sidebar {
