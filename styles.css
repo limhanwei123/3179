@@ -11,11 +11,17 @@ body {
 }
 
 .page {
-    width: 850px;
+    width: 1200px;
     background-color: white;
     margin: auto;
     padding: 50px;
     padding-top: 35px;
+}
+
+.my-sidebar {
+    -ms-flex: 0 0 250px;
+    flex: 0 0 230px;
+    background-color: white; 
 }
 
 .vis-container {
