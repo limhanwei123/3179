@@ -1,0 +1,146 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 600,
+  "data": {
+    "url": "https://raw.githubusercontent.com/limhanwei123/3179/main/suicide/who_data_clean.csv"
+  },
+  "params": [
+    {
+      "name": "Continent_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "labels": [
+          "Show All",
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "name": "Continent: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "Continent_selection == null || datum.continent == Continent_selection"
+    },
+    {
+      "aggregate": [
+        {"op": "sum", "field": "suicides_no", "as": "sum_suicide"},
+        {"op": "mean", "field": "rate", "as": "avg_rate"}
+      ],
+      "groupby": ["country", "continent"]
+    },
+    {"filter": "datum.sum_suicide != 0"},
+    {"filter": "datum.avg_rate != 0"}
+  ],
+  "encoding": {
+    "x": {
+      "field": "avg_rate",
+      "type": "quantitative",
+      "title": "Suicide Rate",
+      "axis": {"tickCount": 7},
+      "scale": {"domain": [0, 40]}
+    },
+    "y": {
+      "field": "sum_suicide",
+      "type": "quantitative",
+      "title": "Number of Suicides",
+      "axis": {"tickCount": 6},
+      "scale": {"type": "log", "domain": [1, 10000000]}
+    }
+  },
+  "layer": [
+    {
+      "mark": "circle",
+      "encoding": {
+        "color": {
+          "title": "Continent",
+          "field": "continent",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "North America",
+              "South America",
+              "Europe",
+              "Africa",
+              "Asia",
+              "Oceania"
+            ],
+            "range": [
+              "#e41a1c",
+              "#984ea3",
+              "#ff7f00",
+              "#a6cee3",
+              "#377eb8",
+              "#a65628"
+            ]
+          }
+        },
+        "size": {"value": 100},
+        "opacity": {"value": 0.6},
+        "tooltip": [
+          {"field": "country", "type": "nominal", "title": "Continent"},
+          {
+            "field": "sum_suicide",
+            "type": "quantitative",
+            "title": "Total Number of Suicides"
+          },
+          {
+            "field": "avg_rate",
+            "type": "quantitative",
+            "title": "Suicide Rate",
+            "format": ".2f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 13,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "country", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['country'] == 'Russia' || datum['country'] == 'Singapore' || datum['country'] == 'Australia' || datum['country'] == 'New Zealand'  ||  datum['country'] == 'United States of America' || datum['country'] == 'Argentina'",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "country", "type": "nominal", "title": "Country"},
+          {
+            "field": "sum_suicide",
+            "type": "quantitative",
+            "title": "Total Number of Suicides"
+          },
+          {
+            "field": "avg_rate",
+            "type": "quantitative",
+            "title": "Suicide Rate",
+            "format": ".2f"
+          }
+        ]
+      }
+    }
+  ]
+}
