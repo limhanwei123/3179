@@ -43,11 +43,7 @@
       "field": "mean_acc",
       "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}
     },
-    "color": {"field": "continent", "type": "nominal", "title": "Continent"},
-    "opacity": {
-      "condition": {"param": "continent_highlight", "value": 1},
-      "value": 0.2
-    },
+    "color": {"field": "continent", "type": "nominal", "title": "Continent",
     "scale": {
         "domain": [
           "North America",
@@ -65,7 +61,11 @@
           "#377eb8",
           "#a65628"
         ]
-      },
+      }},
+    "opacity": {
+      "condition": {"param": "continent_highlight", "value": 0.6},
+      "value": 0.2
+    },
     "tooltip": [
       {"field": "continent", "title": "Continent"},
       {"field": "mean_acc", "title": "Suicide Rate", "format": ".2f"}
