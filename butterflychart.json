@@ -10,8 +10,8 @@
       "as": "signed_people"
     }
   ],
-  "width": 400,
-  "height": 400,
+  "width": "container",
+  "height": 500,
   "mark": "bar",
   "encoding": {
     "y": {"field": "continent", "sort": "descending", "axis": null},
