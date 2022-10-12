@@ -60,3 +60,7 @@ h1 {
 .right {
     width: 25%;
 }
+
+.center {
+    margin: auto;
+}
