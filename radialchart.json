@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/limhanwei123/3179/main/suicide/who_data_clean.csv"
+  },
+  "transform": [
+    {
+      "aggregate": [{"op": "mean", "field": "rate", "as": "mean_acc"}],
+      "groupby": ["continent"]
+    },
+    {
+      "window": [{"op": "rank", "as": "rank"}],
+      "sort": [{"field": "mean_acc", "order": "descending"}]
+    }
+  ],
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "continent_highlight",
+          "select": {"type": "point", "fields": ["continent"]},
+          "bind": "legend"
+        }
+      ],
+      "mark": {"type": "arc", "innerRadius": 30, "stroke": "#fff"}
+    },
+    {
+      "mark": {"type": "text", "radiusOffset": 30, "fontSize": 20},
+      "encoding": {
+        "text": {"field": "mean_acc", "type": "quantitative", "format": ".2f"},
+        "opacity": {
+          "condition": {"param": "continent_highlight", "value": 1},
+          "value": 0
+        }
+      }
+    }
+  ],
+  "encoding": {
+    "theta": {"field": "mean_acc", "type": "quantitative", "stack": true},
+    "radius": {
+      "field": "mean_acc",
+      "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}
+    },
+    "color": {"field": "continent", "type": "nominal", "title": "Continent"},
+    "opacity": {
+      "condition": {"param": "continent_highlight", "value": 1},
+      "value": 0.2
+    },
+    "tooltip": [
+      {"field": "continent", "title": "Continent"},
+      {"field": "mean_acc", "title": "Suicide Rate", "format": ".2f"}
+    ]
+  }
+}

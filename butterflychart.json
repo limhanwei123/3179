@@ -1,0 +1,42 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/limhanwei123/3179/main/suicide/who_data_clean.csv"
+  },
+  "transform": [
+    {"calculate": "datum.sex == 'male' ? 'Male' : 'Female'", "as": "gender"},
+    {
+      "calculate": "datum.sex == 'male' ? -datum.rate : datum.rate",
+      "as": "signed_people"
+    }
+  ],
+  "width": 500,
+  "height": 350,
+  "mark": "bar",
+  "encoding": {
+    "y": {"field": "continent", "sort": "descending", "axis": null},
+    "x": {
+      "aggregate": "average",
+      "field": "signed_people",
+      "title": "Number of Suicides",
+      "axis": {"format": "s"},
+      "scale": {"domain": [-30, 30]}
+    },
+    "color": {
+      "field": "gender",
+      "scale": {"range": ["#fe8484", "#8aecff"]},
+      "legend": {"orient": "top", "title": "Gender"}
+    },
+    "tooltip": [
+      {"field": "gender"},
+      {"field": "continent", "title": "Continent"},
+      {
+        "aggregate": "average",
+        "field": "rate",
+        "format": ".2f",
+        "title": "Suicide Rate"
+      }
+    ]
+  },
+  "config": {"view": {"stroke": null}, "axis": {"grid": false}}
+}
