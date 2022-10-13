@@ -27,11 +27,11 @@
       "mark": {"type": "arc", "innerRadius": 30, "stroke": "#fff"}
     },
     {
-      "mark": {"type": "text", "radiusOffset": 30, "fontSize": 20},
+      "mark": {"type": "text", "radiusOffset": 19, "fontSize": 16},
       "encoding": {
         "text": {"field": "mean_acc", "type": "quantitative", "format": ".2f"},
         "opacity": {
-          "condition": {"param": "continent_highlight", "value": 1},
+          "condition": {"param": "continent_highlight", "value": 0.6},
           "value": 0
         }
       }
