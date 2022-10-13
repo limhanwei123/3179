@@ -63,10 +63,10 @@ h1 {
 
 .center {
     height: 500px;
+    vertical-align: middle;
 }
 
 .center p {
 display: inline-block;
 line-height: normal;
-vertical-align: middle;
 }
