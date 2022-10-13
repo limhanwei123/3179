@@ -27,7 +27,7 @@
       "mark": {"type": "arc", "innerRadius": 30, "stroke": "#fff"}
     },
     {
-      "mark": {"type": "text", "radiusOffset": 20, "fontSize": 16},
+      "mark": {"type": "text", "radiusOffset": -30, "fontSize": 24},
       "encoding": {
         "text": {"field": "mean_acc", "type": "quantitative", "format": ".2f"},
         "opacity": {
@@ -43,7 +43,7 @@
       "field": "mean_acc",
       "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}
     },
-    "color": {"field": "continent", "type": "nominal", "title": "Continent", "legend": {"orient": "top-left"},
+    "color": {"field": "continent", "type": "nominal", "title": "Continent",
     "scale": {
         "domain": [
           "North America",
