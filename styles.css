@@ -25,10 +25,12 @@ body {
 .description h2,
 h1 {
     margin: auto;
+    height: 500;
 }
 
 .description-right {
     padding-left: 20px;
+    vertical
 }
 
 .description-left {
@@ -59,4 +61,12 @@ h1 {
     
 .right {
     width: 25%;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
