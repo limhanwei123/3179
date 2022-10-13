@@ -27,7 +27,7 @@
       "mark": {"type": "arc", "innerRadius": 30, "stroke": "#fff"}
     },
     {
-      "mark": {"type": "text", "radiusOffset": -30, "fontSize": 24},
+      "mark": {"type": "text", "radiusOffset": -30, "fontSize": 24, "fontWeight": "bold"},
       "encoding": {
         "text": {"field": "mean_acc", "type": "quantitative", "format": ".2f"},
         "opacity": {
