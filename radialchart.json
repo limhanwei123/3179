@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 375,
+  "width": "container",
   "height": 350,
   "data": {
     "url": "https://raw.githubusercontent.com/limhanwei123/3179/main/suicide/who_data_clean.csv"
@@ -27,7 +27,7 @@
       "mark": {"type": "arc", "innerRadius": 30, "stroke": "#fff"}
     },
     {
-      "mark": {"type": "text", "radiusOffset": 19, "fontSize": 16},
+      "mark": {"type": "text", "radiusOffset": 18, "fontSize": 16},
       "encoding": {
         "text": {"field": "mean_acc", "type": "quantitative", "format": ".2f"},
         "opacity": {
