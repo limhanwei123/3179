@@ -21,7 +21,7 @@
       "transform": [
         {"calculate": "'No Data in ' + datum.properties.NAME", "as": "NoData"}
       ],
-      "encoding": {"tooltip": {"field": "NoData"}}
+      "encoding": {"tooltip": {"field": "NoData"}, "strokeOpacity":{"condition":{"param": "paintbrush", "value": 0.8}, "value": 0.2}}
     },
     {
       "data": {
@@ -41,6 +41,7 @@
         },
         {"calculate": "datum.avg_rate", "as": "total_suicide"}
       ],
+      "params": [{"name": "paintbrush", "select": {"type": "point", "on": "mouseover"}}],
       "mark": {"type": "geoshape", "stroke": "lightslategray"},
       "encoding": {
         "color": {
@@ -65,6 +66,7 @@
             "titleLimit": 1000
           }
         },
+        "opacity":{"condition":{"param": "paintbrush", "value": 1}, "value": 0.8},
         "tooltip": [
           {"field": "properties.NAME", "type": "nominal", "title": "Country"},
           {
