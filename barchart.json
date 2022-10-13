@@ -47,7 +47,6 @@
           "field": "continent",
           "type": "nominal",
           "title": "Continent",
-          "legend": {"labelFontSize": 14},
           "scale": {
             "domain": [
               "North America",
