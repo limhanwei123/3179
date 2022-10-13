@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Worldwide Suicide Rate",
   "width": 1200,
-  "height": 600,
+  "height": 500,
   "projection": {"type": "equalEarth"},
   "layer": [
     {"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "#89cff0"}},
