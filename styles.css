@@ -62,5 +62,11 @@ h1 {
 }
 
 .center {
-    margin: auto;
+    height: 500px;
+}
+
+.center p {
+display: inline-block;
+line-height: normal;
+vertical-align: middle;
 }
