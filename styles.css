@@ -37,7 +37,6 @@ h1 {
 
 .pure-g {
     margin-bottom: 40px;
-    height: 600px;
 }
 
 .small-font {
@@ -60,10 +59,4 @@ h1 {
     
 .right {
     width: 25%;
-}
-
-.center p {
-    display: inline-block;
-    line-height: normal;
-    vertical-align: middle;
 }
