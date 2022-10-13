@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Top 10 Country In Total Number of Suicide",
   "width": "container",
   "height": 350,
   "data": {
