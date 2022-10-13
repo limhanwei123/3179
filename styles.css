@@ -25,15 +25,16 @@ body {
 .description h2,
 h1 {
     margin: auto;
-    height: 500;
 }
 
 .description-right {
     padding-left: 20px;
+    height: 500;
 }
 
 .description-left {
     padding-right: 20px;
+    height: 500;
 }
 
 .pure-g {
