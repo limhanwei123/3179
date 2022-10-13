@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container",
+  "width": 375,
   "height": 350,
   "data": {
     "url": "https://raw.githubusercontent.com/limhanwei123/3179/main/suicide/who_data_clean.csv"
@@ -115,8 +115,8 @@
     {
       "mark": {
         "type": "text",
-        "align": "right",
-        "baseline": "middle",
+        "align": "center",
+        "baseline": "bottom",
         "dx": -12,
         "fontSize": 13,
         "fontStyle": "italic"
@@ -126,7 +126,7 @@
         "color": {"value": "black"},
         "opacity": {
           "condition": {
-            "test": "datum['country'] == 'Russia' || datum['country'] == 'Singapore' || datum['country'] == 'Australia' || datum['country'] == 'New Zealand'  ||  datum['country'] == 'United States of America' || datum['country'] == 'Argentina'",
+            "test": "datum['country'] == 'Russia' || datum['country'] == 'Singapore' || datum['country'] == 'Australia' || datum['country'] == 'New Zealand'  ||  datum['country'] == 'United States of America'",
             "value": 1
           },
           "value": 0
