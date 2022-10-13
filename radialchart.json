@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 450,
+  "height": 350,
   "data": {
     "url": "https://raw.githubusercontent.com/limhanwei123/3179/main/suicide/who_data_clean.csv"
   },
@@ -27,11 +27,11 @@
       "mark": {"type": "arc", "innerRadius": 30, "stroke": "#fff"}
     },
     {
-      "mark": {"type": "text", "radiusOffset": 18, "fontSize": 16},
+      "mark": {"type": "text", "radiusOffset": 20, "fontSize": 16},
       "encoding": {
         "text": {"field": "mean_acc", "type": "quantitative", "format": ".2f"},
         "opacity": {
-          "condition": {"param": "continent_highlight", "value": 0.6},
+          "condition": {"param": "continent_highlight", "value": 1},
           "value": 0
         }
       }
@@ -43,7 +43,7 @@
       "field": "mean_acc",
       "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}
     },
-    "color": {"field": "continent", "type": "nominal", "title": "Continent",
+    "color": {"field": "continent", "type": "nominal", "title": "Continent", "legend": {"orient": "top-left"},
     "scale": {
         "domain": [
           "North America",
