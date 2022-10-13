@@ -29,12 +29,12 @@ h1 {
 
 .description-right {
     padding-left: 20px;
-    height: 500;
+    height: 350;
 }
 
 .description-left {
     padding-right: 20px;
-    height: 500;
+    height: 350;
 }
 
 .pure-g {
@@ -45,20 +45,3 @@ h1 {
     font-size: 14px;
 }
 
-.column {
-    float: left;
-    }
-
-    /* Set width length for the left, right and middle columns */
-.left {
-    width: 25%;
-}
-
-.middle {
-    width: 50%;
-    height: 100%;
-}
-    
-.right {
-    width: 25%;
-}
