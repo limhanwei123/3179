@@ -79,5 +79,6 @@
         ]
       }
     }
-  ]
+  ],
+  "config": {"view": {"stroke": null}}
 }
