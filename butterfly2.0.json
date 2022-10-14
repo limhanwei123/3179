@@ -1,0 +1,85 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/limhanwei123/3179/main/suicide/who_data_clean.csv"
+  },
+  "background": "#f9f9f5",
+  "transform": [
+    {"calculate": "datum.sex == 'female' ? 'Female' : 'Male'", "as": "gender"}
+  ],
+  "spacing": 0,
+  "hconcat": [
+    {
+      "width": 150,
+      "height": 350,
+      "transform": [{"filter": {"field": "gender", "equal": "Male"}}],
+      "title": "Male",
+      "mark": "bar",
+      "encoding": {
+        "y": {"field": "continent", "axis": null},
+        "x": {
+          "aggregate": "average",
+          "field": "rate",
+          "title": "Suicide Rate",
+          "axis": {"format": "s", "tickCount": 6},
+          "sort": "descending",
+          "scale": {"domain": [0, 30]}
+        },
+        "color": {
+          "field": "gender",
+          "scale": {"range": ["#fe8484", "#8aecff"]},
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "gender", "title": "Gender"},
+          {"field": "continent", "title": "Continent"},
+          {
+            "aggregate": "average",
+            "field": "rate",
+            "format": ".2f",
+            "title": "Suicide Rate"
+          }
+        ]
+      }
+    },
+    {
+      "width": 50,
+      "height": 350,
+      "view": {"stroke": null},
+      "mark": {"type": "text", "align": "center"},
+      "encoding": {
+        "y": {"field": "continent", "axis": null},
+        "text": {"field": "continent"}
+      }
+    },
+    {
+      "width": 150,
+      "height": 350,
+      "transform": [{"filter": {"field": "gender", "equal": "Female"}}],
+      "title": "Female",
+      "mark": "bar",
+      "encoding": {
+        "y": {"field": "continent", "title": null, "axis": null},
+        "x": {
+          "aggregate": "average",
+          "field": "rate",
+          "title": "Suicide Rate",
+          "axis": {"format": "s", "tickCount": 6},
+          "scale": {"domain": [0, 30]}
+        },
+        "color": {"field": "gender", "legend": null},
+        "tooltip": [
+          {"field": "gender", "title": "Gender"},
+          {"field": "continent", "title": "Continent"},
+          {
+            "aggregate": "average",
+            "field": "rate",
+            "format": ".2f",
+            "title": "Suicide Rate"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {"view": {"stroke": null}, "axis": {"grid": false}}
+}
