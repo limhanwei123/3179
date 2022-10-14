@@ -52,14 +52,14 @@
       "field": "avg_rate",
       "type": "quantitative",
       "title": "Suicide Rate",
-      "axis": {"tickCount": 7},
+      "axis": {"tickCount": 7, "grid": false},
       "scale": {"domain": [0, 40]}
     },
     "y": {
       "field": "sum_suicide",
       "type": "quantitative",
       "title": "Number of Suicides",
-      "axis": {"tickCount": 6},
+      "axis": {"tickCount": 6, "grid": false},
       "scale": {"type": "log", "domain": [1, 10000000]}
     }
   },
@@ -154,5 +154,6 @@
         ]
       }
     }
-  ]
+  ],
+  "config": {"view": {"stroke": null}}
 }
