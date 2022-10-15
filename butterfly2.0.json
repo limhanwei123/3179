@@ -45,6 +45,16 @@
     {
       "width": 50,
       "height": 350,
+      "transform": [
+        {
+          "aggregate": [{
+          "op": "count",
+          "field": "continent",
+          "as": "number"
+          }],
+          "groupby": ["continent"]
+    }
+      ],
       "view": {"stroke": null},
       "mark": {"type": "text", "align": "center"},
       "encoding": {
